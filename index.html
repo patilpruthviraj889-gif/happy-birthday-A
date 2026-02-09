@@ -47,15 +47,18 @@ body {
   border-radius: 50%;
 }
 
-/* Video */
 #video {
   width: 90%;
-  max-width: 520px;
+  max-width: 720px;      /* wider = landscape */
+  aspect-ratio: 16 / 9; /* force landscape */
+  object-fit: cover;
   margin: 40px auto;
   border-radius: 20px;
   opacity: 0;
   transition: 2s;
+  background: black;
 }
+
 
 /* Message */
 #message {
@@ -187,3 +190,4 @@ setTimeout(() => {
 
 </body>
 </html>
+
