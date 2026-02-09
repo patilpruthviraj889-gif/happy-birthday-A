@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aditi ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a0033, #000);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  animation: float 6s ease-in infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120vh); }
+}
+
+/* Title */
+#title {
+  font-size: 3.5em;
+  margin-top: 120px;
+  opacity: 0;
+  color: #ff9ad5;
+  text-shadow: 0 0 15px pink;
+  transition: 2s;
+}
+
+/* Fireworks dots */
+.firework {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+/* Video */
+#video {
+  width: 90%;
+  max-width: 520px;
+  margin: 40px auto;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 2s;
+}
+
+/* Message */
+#message {
+  max-width: 750px;
+  margin: 30px auto;
+  font-size: 1.3em;
+  line-height: 1.7;
+  opacity: 0;
+  transition: 2s;
+}
+
+/* Photos */
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  width: 200px;
+  opacity: 0;
+  transition: 2s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.pickup {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #ffd1ea;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background music -->
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<h1 id="title">🎉 Happy Birthday Aditi 🎉</h1>
+
+<video id="video" controls playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<div id="message">
+Two years with you have taught me what love truly feels like — calm, warm, and real.  
+You make ordinary moments magical just by being you.  
+On your birthday, I just want you to know that you are deeply loved, endlessly cherished,  
+and always my favorite person. ❤️
+</div>
+
+<div class="photos">
+  <div class="card">
+    <img src="photo1.jpg">
+    <div class="pickup">The day I met you, my forever began ✨</div>
+  </div>
+
+  <div class="card">
+    <img src="photo2.jpg">
+    <div class="pickup">You don’t just light up the room — you light up my life 💖</div>
+  </div>
+
+  <div class="card">
+    <img src="photo3.jpg">
+    <div class="pickup">Every smile of yours feels like home 🏡</div>
+  </div>
+
+  <div class="card">
+    <img src="photo4.jpg">
+    <div class="pickup">If love had a face, it would look exactly like you 💫</div>
+  </div>
+</div>
+
+<script>
+// Balloons first
+for (let i = 0; i < 10; i++) {
+  let b = document.createElement("div");
+  b.className = "balloon";
+  b.style.left = Math.random() * 100 + "%";
+  b.style.background = `hsl(${Math.random()*360},80%,70%)`;
+  document.body.appendChild(b);
+}
+
+// Show title
+setTimeout(() => {
+  document.getElementById("title").style.opacity = 1;
+}, 2500);
+
+// Fireworks
+setTimeout(() => {
+  for (let i = 0; i < 120; i++) {
+    let f = document.createElement("div");
+    f.className = "firework";
+    f.style.top = Math.random() * 100 + "%";
+    f.style.left = Math.random() * 100 + "%";
+    f.style.background = `hsl(${Math.random()*360},100%,60%)`;
+    document.body.appendChild(f);
+  }
+}, 3500);
+
+// Video
+setTimeout(() => {
+  document.getElementById("video").style.opacity = 1;
+}, 5000);
+
+// Message
+setTimeout(() => {
+  document.getElementById("message").style.opacity = 1;
+}, 6500);
+
+// Photos
+setTimeout(() => {
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.opacity = 1;
+  });
+}, 8000);
+</script>
+
+</body>
+</html>
